@@ -3,10 +3,49 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.vn</groupId>
   <artifactId>SearchQuestion</artifactId>
+  
+    <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+		<version>3.9.1</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+			  <mainClass>com.vn.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+	  <plugin>
+		  
+         <artifactId>maven-war-plugin</artifactId>
+		 <version>3.3.1</version>
+         <configuration>
+           <archive>
+             <manifest>
+               <addClasspath>true</addClasspath>
+               <classpathPrefix>dependency/</classpathPrefix>
+             </manifest>
+           </archive>
+         </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>SearchQuestion</name>
   <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
   <dependencies>
 
     <dependency>
@@ -16,11 +55,36 @@
       <scope>test</scope>
     </dependency>
 
+	<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>4.8.1</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.11.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.11.0</version>
+    </dependency>
+	
 	<dependency>
-		<groupId>org.json</groupId>
-		<artifactId>json</artifactId>
-		<version>20200518</version>
-	</dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-utils</artifactId>
+      <version>1.1</version>
+    </dependency>
 
   </dependencies>
   

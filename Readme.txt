@@ -20,4 +20,12 @@
 	To clean the project, copy dependencies, and package the project (executing all phases up to package):
 		mvn clean dependency:copy-dependencies package
 	To run:
-		java -cp .;..\dependency\json-20200518.jar com.vn.App
+		java -cp .;..\dependency\okhttp-4.8.1.jar;..\dependency\annotations-13.0.jar;..\dependency\jackson-annotations-2.11.0.jar;..\dependency\jackson-core-2.11.2.jar;..\dependency\jackson-databind-2.11.0.jar;..\dependency\json-20200518.jar;..\dependency\junit-3.8.1.jar;..\dependency\kotlin-stdlib-1.3.72.jar;..\dependency\kotlin-stdlib-common-1.3.70.jar;..\dependency\okhttp-4.8.1.jar;..\dependency\okio-2.7.0.jar; com.vn.App
+
+3. Used Okhttp3 library
+4. Used jackson core library
+5. Written test case for the stackoverflow API for converting response json to java objects.
+	To run test cases:
+		mvn test
+6. Generated jar using command:
+		mvn install
